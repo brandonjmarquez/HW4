@@ -116,7 +116,9 @@ list_t filter(list_t list, bool (*fn)(int)){
 }
 
 static list_t rotate_helper(list_t list, unsigned int n, list_t result) {
-  if(n == 0) {
+  if (list_isEmpty(list)) {
+    list_t list_remade = result;
+  } else if (n == 0) {
     return append(list, reverse(result));
   } else {
     return rotate_helper(list_rest(list), n - 1, list_make(list_first(list), result));
@@ -124,8 +126,6 @@ static list_t rotate_helper(list_t list, unsigned int n, list_t result) {
 }
 
 list_t rotate(list_t list, unsigned int n){
-   list_print(list);
-   std::cout << std::endl << n << std::endl;
    return rotate_helper(list, n, list_make());
 }
 
