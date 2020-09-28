@@ -117,9 +117,9 @@ list_t filter(list_t list, bool (*fn)(int)){
 
 static list_t rotate_helper(list_t list, unsigned int n, list_t result) {
   if (list_isEmpty(list)) {
-    return rotate_helper(result, n - 1, list_make());
+    return rotate_helper(reverse(result), n - 1, list_make());
   } else if (n == 0) {
-    return append(result, reverse(list));
+    return append(list, reverse(result));
   } else {
     return rotate_helper(list_rest(list), n - 1, list_make(list_first(list), result));
   }

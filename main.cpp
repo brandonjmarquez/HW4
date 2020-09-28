@@ -69,7 +69,7 @@ int main() {
     list_print(filter_even(original));
     std::cout << endl;
     std::cout << "rotate: ";
-    list_print(rotate(original, 11));
+    list_print(rotate(original, 0));
     std::cout << endl;
     std::cout << "insert_list: ";
     list_print(insert_list(testappend, testappend2, 8));
