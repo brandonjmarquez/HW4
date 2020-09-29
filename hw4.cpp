@@ -152,7 +152,7 @@ int fib(int n){
 
 static int fib_tail_helper(int n, int fib0, int fib1) {
   if(n < 0) {
-    return result;
+    return fib1;
   } else {
     return fib_tail_helper(n-1, fib0 + fib1, fib0 * 2 + fib1);
   }
