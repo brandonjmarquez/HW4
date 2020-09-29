@@ -89,7 +89,9 @@ list_t filter_even(list_t list) {
 }
 
 static list_t filter_helper(list_t list, bool (*fn)(int), list_t result) {
-  if(fn) {
+  if(list_isEmpty(list)) {
+    return result;
+  } else if (fn) {
     return filter_helper(list_rest(list), fn, list_make(list_first(list), result));
   }
   else { 
