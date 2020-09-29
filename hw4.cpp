@@ -128,6 +128,7 @@ static list_t rotate_helper(list_t list, unsigned int n, list_t result) {
 list_t rotate(list_t list, unsigned int n){
   list_print(list);
   list_print(rotate_helper(list, n, list_make()));
+  std::cout << n << std::endl;
    return rotate_helper(list, n, list_make());
 }
 
